@@ -73,8 +73,8 @@ if __name__ == '__main__':
         from_datetime_inclusive=datetime(year=2017, month=1, day=1, hour=0, minute=0, second=0),
         to_datetime_not_inclusive=datetime(year=2018, month=1, day=1, hour=0, minute=0, second=0),
         also_compress=False,
-        processes=64,
+        processes=128,
         min_sleep_seconds=1,
-        max_sleep_seconds=5,
+        max_sleep_seconds=2,
         persist_dir='2017'
     )
