@@ -1,3 +1,8 @@
+*.csv
+grid/
+no_ts/
+parquet/
+export/
 .ipynb_checkpoints/
 old/
 2016/
