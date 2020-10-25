@@ -72,11 +72,11 @@ def _mp(args):
         
 if __name__ == '__main__':
     get_all(
-        from_datetime_inclusive=datetime(year=2020, month=1, day=1, hour=0, minute=0, second=0),
-        to_datetime_not_inclusive=datetime(year=2020, month=10, day=24, hour=0, minute=0, second=0),
+        from_datetime_inclusive=datetime(year=2019, month=2, day=14, hour=0, minute=0, second=0),
+        to_datetime_not_inclusive=datetime(year=2019, month=2, day=15, hour=0, minute=0, second=0),
         also_compress=False,
         processes=32,
         min_sleep_seconds=1,
         max_sleep_seconds=5,
-        persist_dir='2020'
+        persist_dir='2019'
     )
