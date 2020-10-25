@@ -17,6 +17,8 @@ def get_all(
         persist_dir, 
         min_sleep_seconds, 
         max_sleep_seconds):
+    if not os.path.exists(persist_dir):
+        os.makedirs(persist_dir)
     timestamps=[from_datetime_inclusive + timedelta(minutes=i) 
                 for i in range(_minutes_diff(early=from_datetime_inclusive, late=to_datetime_not_inclusive))]
     with Pool(processes=processes, maxtasksperchild=1) as pool, open('download.log', 'a') as f_log:
@@ -70,11 +72,11 @@ def _mp(args):
         
 if __name__ == '__main__':
     get_all(
-        from_datetime_inclusive=datetime(year=2017, month=1, day=1, hour=0, minute=0, second=0),
-        to_datetime_not_inclusive=datetime(year=2018, month=1, day=1, hour=0, minute=0, second=0),
+        from_datetime_inclusive=datetime(year=2020, month=1, day=1, hour=0, minute=0, second=0),
+        to_datetime_not_inclusive=datetime(year=2020, month=10, day=24, hour=0, minute=0, second=0),
         also_compress=False,
-        processes=128,
+        processes=32,
         min_sleep_seconds=1,
-        max_sleep_seconds=2,
-        persist_dir='2017'
+        max_sleep_seconds=5,
+        persist_dir='2020'
     )
